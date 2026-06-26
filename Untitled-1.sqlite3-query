@@ -1,0 +1,101 @@
+-- database: ./database.db
+
+-- Use the ▷ button in the top right corner to run the entire file.
+
+SELECT * FROM Type;
+
+INSERT INTO Type (Born,article) VALUES ("1700","The grand piano was born around 1700 in Italy, invented by Bartolomeo Cristofori.
+Frustrated that the harpsichord couldn't change volume, Cristofori created a hammer action mechanism. This allowed the instrument to play both soft and loud, leading to its original name: the pianoforte.
+Key Facts:
+Design: Its horizontal, wing-like shape was borrowed from the harpsichord to accommodate long, powerful strings.
+The Action: Because the strings are horizontal, gravity helps the hammers reset quickly, making grand pianos more responsive than vertical uprights.
+Modern Standard: While it started with fewer keys, the modern grand now features 88 keys and a cast-iron frame to support massive string tension.");
+
+INSERT INTO Type (Born,article) VALUES ("1930","The spinet is the smallest vertical piano, standing only 36 to 39 inches tall. It was created in the 1930s to be an affordable, space-saving option for homes during the Great Depression.
+Quick Facts:
+The Action: Because it’s so short, it uses a drop action. The keys connect to the mechanism via long rods that drop below the keyboard level.
+Sound: It has the shortest strings of any piano, leading to a weaker, thinner sound and less control over volume.
+Status: They fell out of fashion by the 1990s because they are difficult to repair and don't sound as good as slightly larger console pianos.");
+
+INSERT INTO Type (Born,article) VALUES ("1700","The upright piano was born in the late 1700s. It was designed to provide the sound of a grand while saving space by stretching the strings vertically instead of horizontally.
+Quick Profile:
+Invention: John Isaac Hawkins and Matthias Müller produced the first functional uprights around 1800.
+Mechanism: Unlike a grand, which uses gravity to reset the hammers, an upright uses springs to pull hammers back after a note is struck.
+Height: They typically stand 43 to 60 inches tall. The taller the piano, the longer the strings and the richer the sound.
+Popularity: By the late 1800s, it became the standard home piano because it fits flush against a wall.");
+
+INSERT INTO Type (Born,article) VALUES ("1900","A Baby Grand is the smallest version of the grand piano, typically measuring between 4 feet 11 inches and 5 feet 6 inches in length. It was developed in the late 19th century to offer the aesthetic of a concert grand for smaller Victorian parlors.
+Quick Facts:
+The Grand Benefit: Despite its small size, it still uses a horizontal action. This allows for faster note repetition than an upright because the hammers use gravity to reset.
+Sound vs. Size: While it looks impressive, its shorter strings mean the bass notes aren't as deep or rich as those on a full-sized grand.
+Popularity: It is the most popular grand style for homes because it provides the classic wing-shaped look without requiring a massive stage.");
+
+INSERT INTO Type (Born,article) VALUES ("250","The Organ Piano usually refers to a Pipe Organ, though it functions very differently from a piano. It was born in Ancient Greece as the hydraulis, making it one of the oldest keyboard instruments in existence.
+Quick Facts:
+How it Works: Unlike a piano which strikes strings, an organ blows air through pipes. A keyboard manual or pedalboard triggers valves to release wind.
+Sound: It can sustain notes indefinitely as long as air is supplied, whereas a piano’s sound fades immediately after the strike.
+The Piano Confusion: People often call it an organ piano because both use keyboards, but an organ can sound like an entire orchestra using different stops knobs to change the tone.
+Key Difference:
+Piano: Percussion instrument hammers hit strings.
+Organ: Wind instrument air flows through pipes.");
+
+INSERT INTO Type (Born,article) VALUES ("1900","The player piano or pianola was born in the late 19th century, with the first truly practical self-playing mechanism patented by Edwin S. Votey in 1896.
+How It Works:
+The Brain: It uses a perforated paper roll. Each hole in the paper corresponds to a specific note.
+Pneumatic Power: As the roll spins, air is vacuumed through the holes. This suction triggers a pneumatic finger to strike the piano key.
+Human Input: Early models required a person to pump foot pedals to provide the air, though later versions became fully electric.
+Impact:
+Before the radio and phonograph became common, the player piano was the primary way families heard live professional music in their homes. At its peak in 1924, over half of all pianos produced in the U.S. were player pianos.");
+
+INSERT INTO Type (Born,article) VALUES ("1760","The square grand piano was born in the 1760s, gaining massive popularity in the 19th century as the primary home piano.
+Quick Facts:
+The Shape: Despite the name, it is actually rectangular. The strings run horizontally from left to right, similar to a clavichord but much larger.
+The Grand Name: It was called grand because it used a more powerful hammer mechanism than earlier, smaller keyboard instruments.
+The Rise and Fall: It was the most popular piano in America until the 1880s. It eventually went extinct because the rectangular frame couldn't handle the high string tension required for modern volume, leading to the birth of the Upright.
+Key Traits:
+Ornate Design: Often built with heavy rosewood and intricately carved legs, making them look like beautiful pieces of furniture.
+Sound: They have a soft, boxy tone that is charming but much quieter than a modern wing-shaped grand.");
+
+INSERT INTO Type (Born,article) VALUES ("1800","The Ballroom Grand which is often called a Semi-Concert Grand was born in the mid-to-late 1800s. It was designed to bridge the gap between a home piano and a massive concert hall instrument.
+Quick Facts:
+Size: It typically measures between 6 feet 7 inches and 7 feet 6 inches long.
+The Purpose: It was built for medium-sized venues like ballrooms, parlors, or recital halls where a standard grand would be too quiet, but a 9-foot concert grand would be physically overwhelming.
+Sound: Because the strings are significantly longer than a Baby Grand's, it has a much deeper, more resonant bass and a singing tone used by professional pianists for practice.
+Why It Matters:
+It is often considered the perfect piano size because it provides the power and touch of a professional instrument while still being able to fit into a large private home.");
+
+INSERT INTO Type (Born,article) VALUES ("1920","The Petite Grand was born in the late 1920s to early 1930s. It was created as the ultimate space-saver for small apartments during an era when pianos were the center of home entertainment.
+Quick Facts:
+Size: It is the smallest of all horizontal pianos, typically measuring between 4 feet 5 inches and 4 feet 10 inches long.
+Compact Design: It is shorter than a Baby Grand, designed specifically to fit into corners or rooms where space is at a premium.
+The Trade-off: Because the strings are so short some even shorter than those in a tall upright, the sound is less resonant, and the bass can sound a bit tubby or thin.
+Key Advantage:
+Despite its tiny footprint, it still features a true grand action, giving the player better touch and faster key repetition than a vertical piano.");
+
+-- All Type
+SELECT * FROM Type;
+-- all type and the maker
+SELECT Makers.Name,Type.Born FROM Type
+JOIN Makers ON Makers.MakerID=Type.Makers.ID;
+
+--bikes of one make
+SELECT Type.Born FROM Type
+JOIN Makers ON Makers.MakersID
+WHERE Makers.Name = "Grand Piano";
+
+--just id, maker, model and imageur1
+SELECT Type.ID, Makers.Name, Type.Born,Type.ImageURL
+FROM Type
+JOIN Makers ON Makers.MakerID=Type.MakersID;
+
+--just one Name based on id
+SELECT * FROM Type JOIN Makers ON Makers.MakerID=Type.MakersID
+WHERE Type.ID = 2;
+
+SELECT * FROM Type
+JOIN Makers ON Makers.MakersID=Type.MakersID
+WHERE Type.TypeID = ?;
+
+SELECT * FROM Type
+JOIN Makers ON Makers.MakersID=Type.MakersID
+WHERE Type.TypeID = ?;
