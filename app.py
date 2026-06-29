@@ -45,13 +45,13 @@ def piano(id):
     print(result)
     return render_template("piano.html", result=result)
 
-@app.route('/some-path')  
+@app.route('/history')  
 def history_page():       
     return render_template('history.html')
 
-@app.route('/some-path')  
-def details_page():       
-    return render_template('details.html')
+@app.route('/elements')  
+def elements_page():       
+    return render_template('elements.html')
 
 
 

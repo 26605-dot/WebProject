@@ -1,7 +1,11 @@
 {% extends "layout.html" %}
 {% block body %}
 
-
+<style>
+  body {
+    padding-top: 100px !important;
+  }
+</style>
 
 <!DOCTYPE html>
 <html lang="ja">
@@ -18,7 +22,7 @@
         <ul>
             <li><a href="/">HOME</a></li>
             <li><a href="{{ url_for('history_page') }}">History</a></li>
-            <li><a href="{{ url_for('details_page') }}">Details</a></li>
+            <li><a href="{{ url_for('elements_page') }}">Elements</a></li>
         </ul>
     </nav>
 </header>

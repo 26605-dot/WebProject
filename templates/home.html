@@ -1,12 +1,24 @@
 {% extends "layout.html" %}
 {% block body %}
+<style>
+  body {
+    padding-top: 250px !important;
+  }
+
+  header, .hero, .hero-section {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+  }
+</style>
 
 <header class="header">
     <nav class="nav-menu">
         <ul>
             <li><a href="/">HOME</a></li>
             <li><a href="{{ url_for('history_page') }}">History</a></li>
-            <li><a href="{{ url_for('details_page') }}">Details</a></li>
+            <li><a href="{{ url_for('elements_page') }}">Elements</a></li>
         </ul>
     </nav>
 </header>

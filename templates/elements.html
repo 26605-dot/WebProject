@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<style>
+  body {
+    padding-top: 100px !important;
+  }
+</style>
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Elements</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="header">
+    <nav class="nav-menu">
+        <ul>
+            <li><a href="/">HOME</a></li>
+            <li><a href="{{ url_for('history_page') }}">History</a></li>
+            <li><a href="{{ url_for('elements_page') }}">Elements</a></li>
+        </ul>
+    </nav>
+</header>
+</body>
+
+</html>
+
+<div class="elements-container">
+  <h1>Elements</h1>
+  <p>The piano is a beautifully versatile instrument that bridges the worlds of percussion and strings. When you press a key, it triggers a felt-covered hammer to strike high-tension steel strings inside, which then vibrate to produce sound.
+
+  What makes the piano so special is its dynamic range—hence its original name, the pianoforte, which literally means "soft-loud." By changing how hard or soft you press the keys, you can evoke a massive spectrum of emotion.
+
+  With 88 keys covering over seven octaves, it can play both deep, resonant bass lines and bright, shimmering melodies simultaneously. This incredible range makes it a foundational instrument for everything from classical masterpieces to modern pop and jazz.</p>
+</div>
+
+{% endblock %}
