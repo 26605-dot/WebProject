@@ -52,13 +52,13 @@ body,h1,h2,h3,h4,h5,h6 {
 
 
 .grand-image {
-  background-image:url("images/grandpiano.pngs");
-  height: 50vh;
+  background-image:url("images/grandpiano.jpg");
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
   position: relative;
-  top: 15px;
+  margin-top: 70px;
+  background-size: contain;
+  height: 300px;
 }
 
 display: flex;
