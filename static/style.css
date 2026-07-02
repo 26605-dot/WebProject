@@ -2,8 +2,8 @@
 
 body,h1,h2,h3,h4,h5,h6 {
     font-family: 'Times New Roman', Times, serif !important
+  
 }
-
 
 .piano-image {
     /* /* width: 30%;  */
@@ -47,7 +47,18 @@ body,h1,h2,h3,h4,h5,h6 {
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  top: 45px;
+  top: 15px;
+}
+
+
+.grand-image {
+  background-image:url("images/grandpiano.pngs");
+  height: 50vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  top: 15px;
 }
 
 display: flex;
@@ -116,7 +127,7 @@ p {
     display:flex;
     flex-direction: column;
     height: 100%;
-    background: #9e8080
+    background: #9e8084
 }
  
 
@@ -125,7 +136,7 @@ p {
   top: 0;            
   left: 0;           
   width: 100%;       
-  background-color: #ac8e9c;  
+  background-color: #715d5d;  
   z-index: 9999;     
 }
 
@@ -148,5 +159,5 @@ p {
 }
 
 .nav-menu a:hover {
-  color: #8a8686;      
+  color: #534f4f;      
 }

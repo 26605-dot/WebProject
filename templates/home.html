@@ -1,19 +1,12 @@
 {% extends "layout.html" %}
 {% block body %}
 <style>
-  body {
-    padding-top: 250px !important;
-  }
-
-  header, .hero, .hero-section {
-    position: absolute !important;
-    top: 0 !important;
-    left: 0 !important;
-    width: 100% !important;
-  }
+ 
 </style>
 
+<body>
 <header class="header">
+<div class="custom-nav-wrapper">
     <nav class="nav-menu">
         <ul>
             <li><a href="/">HOME</a></li>
@@ -21,39 +14,34 @@
             <li><a href="{{ url_for('elements_page') }}">Elements</a></li>
         </ul>
     </nav>
-</header>
-
-
-<header>
-<div  class="hero-image">
-    <h1 class="hero-text">Welcome</h1>
 </div>
 </header>
+</body>
 
- <div>
-    <h1>PIANO</h1>
-    <h4>Here are 12 types of piano below! Click one of them to learn more.</h4>
-    <h5>
-        <!-- <img src="{{ url_for('static', filename='images/keyboard.jpg') }}" alt="User Avatar" class="piano-image"> -->
-    </h5>
+<div class="custom-grand-wrapper">
+ <div class="grand-image">
+     <h1 class="hero-text"></h1>
  </div>
-
-
-<div class="three-column">
-    {% for result in results %}
-
-    <a href="{{ url_for('piano',id=result[0]) }}">
-        <div class="w3-card-4">
-
-            <!-- <h1><span> -->
-            <h3>{{ result[1] }}</h3>
-            <img src="{{ result[3] }}" alt="{{ result[2] }}" class='piano-image'>
-            <h5>---------------------------------MORE<span>></span></h5>
-
-
-
-        </div>
-    </a>
-    {% endfor %}
 </div>
+
+<div class="my-content-section">
+    <div>
+        <h1>PIANO</h1>
+        <h4>Here are 12 types of piano below! Click one of them to learn more.</h4>
+    </div>
+
+    <div class="three-column">
+        {% for result in results %}
+        <a href="{{ url_for('piano',id=result[0]) }}">
+            <div class="w3-card-4">
+                <h3>{{ result[1] }}</h3>
+                <img src="{{ result[3] }}" alt="{{ result[2] }}" class='piano-image'>
+                <h5>---------------------------------MORE<span>&gt;</span></h5>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+</div>
+</style>
+
 {% endblock %}
