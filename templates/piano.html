@@ -1,9 +1,30 @@
 {% extends "layout.html" %}
 {% block body %}
-<h2>{{result['Name']}}</h2>
-<h3>Born in {{result['Born']}}</h3>
+
+<body>
+<header class="header">
+<div class="custom-nav-wrapper">
+    <nav class="nav-menu">
+        <ul>
+            <li><a href="/">HOME</a></li>
+            <li><a href="{{ url_for('history_page') }}">History</a></li>
+            <li><a href="{{ url_for('elements_page') }}">Elements</a></li>
+        </ul>
+    </nav>
+</div>
+</header>
+</body>
+
+<style>
+  body {
+    padding-top: 40px !important;
+  }
+</style>
+
+<h1 style="text-align: center;">{{result['Name']}}</h1>
+<h4 style="text-align: center;">Born in {{result['Born']}}</h4>
 <h5><span>{{result['article']}}</span></h5>
-<img src="{{result['Image']}}" width="400">
+<img style="text-align: center;" src="{{result['Image']}}" width="400">
 <a href="/" style="color: #0066cc;">HOME</a>
 
 
