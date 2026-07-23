@@ -8,7 +8,7 @@ const questions = [
   { q: "How often do you want to play？", A: "When I feel I want to.", B: "For a few times in a week", C: "Everyday", D: "For a vibe, not for playing" },
   { q: "Size？", A: "It must be small", B: "A little small", C: "Never mind", D: "Bigger" },
   { q: "Sound？", A: "soft and quiet", B: "Bright and for home use.", C: "Strong and various.", D: "Unique sound" },
-  { q: "Do you need specific features？", A: "No need.", B: "Something common", C: "クラシック向けの本格仕様が欲しい", D: "自動演奏やレトロ機構が欲しい" }
+  { q: "Do you need specific features？", A: "No need.", B: "Something common", C: "Authentic features", D: "Auto-performing or retro effects" }
 ];
 
 let current = 0;
