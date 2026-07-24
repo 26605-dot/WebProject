@@ -1,5 +1,5 @@
 const questions = [
-  { q: "Do you have enough space？", A: "Not so much", B: "Yes", C: "much space", D: "it's not matter, i like retro vibes." },
+  { q: "Do you have enough space？", A: "Not so much", B: "Yes", C: "much space", D: "it's not matter, I like retro vibes." },
   { q: "About volume？", A: "I usually play at night", B: "I guess neighbors want me to stay quiet.", C: "Nobody cares", D: "I would like to have old sound" },
   { q: "What is th purpose？", A: "I just want to practice at home", B: "I want to have fun as one of me hobbies", C: "I would like to play real classic", D: "I would like to enjoy traditional or special features." },
   { q: "Price?", A: "cheap", B: "normal", C: "expensive", D: "no matter, vibe is more important" },
@@ -39,7 +39,7 @@ function selectAnswer(letter) {
 }
 
 function sendToPython() {
-  fetch("/diagnosis", {
+  fetch("/diagnosis_page", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ answers })

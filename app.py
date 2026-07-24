@@ -1,4 +1,4 @@
-from flask import Flask, g, render_template
+from flask import Flask, g, render_template, request, jsonify
 import sqlite3
 
 DATABASE = 'database.db'
@@ -53,6 +53,38 @@ def history_page():
 def elements_page():       
     return render_template('elements.html')
 
+
+PIANO_MAP = {
+    "A": ["Spinet Piano", "Console Piano", "Upright Piano"],
+    "B": ["Console Piano", "Upright Piano", "Petite Grand"],
+    "C": ["Baby Grand Piano", "Medium Grand Piano", "Parlor Grand / Ballroom Grand"],
+    "D": ["Square Grand Piano", "Organ Piano", "Player Piano"]
+}
+
+def diagnose_piano(answers):
+    score = {"A": 0, "B": 0, "C": 0, "D": 0}
+    for ans in answers:
+        score[ans] += 1
+
+    sorted_types = sorted(score.items(), key=lambda x: x[1], reverse=True)
+
+    recommendations = []
+    for item in sorted_types[:3]:
+        type_letter = item[0]
+        recommendations.append({
+            "type": type_letter,
+            "pianos": PIANO_MAP[type_letter]
+        })
+
+    return recommendations
+
+@app.route("/diagnosis", methods=["POST"])
+@app.route("/diagnosis_page", methods=["POST"])
+def diagnosis_page():
+    payload = request.get_json(silent=True) or {}
+    answers = payload.get("answers", [])
+    result = diagnose_piano(answers)
+    return jsonify(result)
 
 
 #def get_name(id):
