@@ -69,7 +69,7 @@ def diagnose_piano(answers):
     sorted_types = sorted(score.items(), key=lambda x: x[1], reverse=True)
 
     recommendations = []
-    for item in sorted_types[:3]:
+    for item in sorted_types[:2]:
         type_letter = item[0]
         recommendations.append({
             "type": type_letter,
@@ -78,7 +78,10 @@ def diagnose_piano(answers):
 
     return recommendations
 
-@app.route("/diagnosis", methods=["POST"])
+@app.route("/diagnosis", methods=["GET"])
+def diagnosis():
+    return render_template("diagnosis.html")
+
 @app.route("/diagnosis_page", methods=["POST"])
 def diagnosis_page():
     payload = request.get_json(silent=True) or {}

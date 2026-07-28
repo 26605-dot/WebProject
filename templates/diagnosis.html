@@ -3,15 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <title>Piano Diagnosis</title>
+  <style>
+    body {
+        margin: 0 !important;
+        padding: 0 !important;
+        font-family: "Helvetica Neue", Arial, sans-serif !important;
+        background: linear-gradient(135deg, #cce7ff, #a8d8ff) !important;
+        min-height: 100vh !important;
+    }
+  </style>
+  
 </head>
 
 <body>
+  
+<header class="header">
+<div class="custom-nav-wrapper">
+    <nav class="nav-menu">
+        <ul>
+            <li><a href="/">HOME</a></li>
+            <li><a href="{{ url_for('history_page') }}">History</a></li>
+            <li><a href="{{ url_for('elements_page') }}">Elements</a></li>
+            <li><a href="{{ url_for('diagnosis') }}">Piano Diagnosis</a></li>
 
-<h1>Piano Diagnosis</h1>
+        </ul>
+    </nav>
+</div>
+</header>
 
-<div id="question-container"></div>
-<div id="result-container" style="display:none;"></div>
+ <div class="container">
+  <h1>Piano Diagnosis</h1>
 
+  <div id="question-container"></div>
+  <div id="result-container" style="display:none;"></div>
+ </div>
 <script >
 
   const questions = [
@@ -71,7 +96,7 @@ function showResult(data) {
   let html = "<h2>Result</h2>";
 
   data.forEach((item, index) => {
-    html += `<h3>${index + 1}recommended（タイプ ${item.type}）</h3>`;
+    html += `<h3>${index + 1}. recommended（type ${item.type}）</h3>`;
     item.pianos.forEach(p => {
       html += `<p>・${p}</p>`;
     });
@@ -85,7 +110,112 @@ showQuestion();
 </script>
 
 
-
-
 </body>
 </html>
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <title>Piano Diagnosis</title>
+
+  <style>
+    body {
+      margin: 0 !important;
+      padding: 0 !important;
+      font-family: "Helvetica Neue", Arial, sans-serif !important;
+      background: linear-gradient(135deg, #cce7ff, #a8d8ff) !important;
+      min-height: 100vh !important;
+      display: flex !important;
+      justify-content: center !important;
+      align-items: flex-start !important;
+      padding-top: 40px !important;
+    }
+
+    .container {
+      width: 95% !important;
+      max-width: 850px !important;
+      background: #ffffff !important;
+      padding: 50px !important;
+      border-radius: 30px !important;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.15) !important;
+    }
+
+    h1 {
+      text-align: center !important;
+      font-size: 48px !important;
+      margin-bottom: 40px !important;
+      color: #2a4d7a !important;
+      font-weight: 700 !important;
+      letter-spacing: 1px !important;
+    }
+
+    #question-container h2 {
+      font-size: 34px !important;
+      margin-bottom: 30px !important;
+      color: #2a4d7a !important;
+      text-align: center !important;
+      font-weight: 600 !important;
+    }
+
+    #question-container button {
+       display: block !important;
+      width: 100% !important;
+
+      /* ボタンを薄くする */
+      padding: 12px 20px !important;
+
+      /* ボタン間の余白を少し減らす */
+      margin: 12px 0 !important;
+
+      /* 文字を少し小さくする */
+      font-size: 20px !important;
+
+      background: #e6f3ff !important;
+      border-radius: 18px !important;
+      cursor: pointer !important;
+      transition: 0.25s !important;
+      border: 2px solid transparent !important;
+      text-align: center !important;
+      font-weight: 500 !important;
+}
+
+    #question-container button:hover {
+     background: #d4ecff !important;
+      transform: translateY(-3px) !important;
+      border-color: #8cc6ff !important;
+}
+
+   #result-container {
+      margin-top: 30px !important;
+      padding: 25px !important;
+      background: #f0f8ff !important;
+      border-radius: 20px !important;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1) !important;
+}
+
+#result-container h2 {
+      font-size: 30px !important;
+      margin-bottom: 20px !important;
+      color: #2a4d7a !important;
+      text-align: center !important;
+      font-weight: 600 !important;
+}
+
+#result-container h3 {
+      font-size: 24px !important;
+      margin-top: 20px !important;
+      color: #2a4d7a !important;
+      font-weight: 500 !important;
+}
+
+#result-container p {
+      font-size: 18px !important;
+      margin-left: 10px !important;
+      color: #3b5c85 !important;
+}
+
+  </style>
+</head>
+
