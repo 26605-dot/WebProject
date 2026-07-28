@@ -134,7 +134,8 @@ p {
 .header {
   position: fixed;   
   top: 0;            
-  left: 0;           
+  left: 0;      
+  right: 0;
   width: 100%;       
   background-color: #96b3ba;  
   z-index: 9999;     
@@ -161,3 +162,5 @@ p {
 .nav-menu a:hover {
   color: #534f4f;      
 }
+
+

@@ -1,42 +1,101 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Piano Diagnosis</title>
   <style>
+    /* Reset defaults */
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-        margin: 0 !important;
-        padding: 0 !important;
-        font-family: "Helvetica Neue", Arial, sans-serif !important;
-        background: linear-gradient(135deg, #cce7ff, #a8d8ff) !important;
-        min-height: 100vh !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      font-family: "Helvetica Neue", Arial, sans-serif !important;
+      background: linear-gradient(135deg, #cce7ff, #a8d8ff) !important;
+      min-height: 100vh !important;
+    }
+
+    /* Header styling to stick to the top */
+    .header {
+      top: 0;
+      right: 0 !important;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.9); /* Optional: semi-transparent header bar */
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Center navigation horizontally */
+    .custom-nav-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;      /* full width */
+    padding: 10px 20px;
+}
+
+
+    .nav-menu ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex; /* Displays items in a horizontal row */
+      justify-content: center; /* Centers items horizontally (change to 'space-between' or 'flex-end' as needed) */
+      align-items: center;
+      gap: 30px; /* Distance between menu items */
+    }
+
+    .nav-menu a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 14px;
+      transition: color 0.3s ease;
+    }
+
+    .nav-menu a:hover {
+      color: #0066cc;
+
+    }
+
+    /* Page Content Styling */
+    .container {
+      padding: 40px 20px;
+      body: center;
+      text-align: center;
     }
   </style>
-  
 </head>
 
 <body>
   
-<header class="header">
-<div class="custom-nav-wrapper">
-    <nav class="nav-menu">
+
+  <main class="container">
+    <h1>Piano Diagnosis</h1>
+    <div id="question-container"></div>
+    <div id="result-container" style="display:none;"></div>
+ 
+  </main>
+
+  <header class="header">
+    <div class="custom-nav-wrapper">
+      <nav class="nav-menu">
         <ul>
-            <li><a href="/">HOME</a></li>
-            <li><a href="{{ url_for('history_page') }}">History</a></li>
-            <li><a href="{{ url_for('elements_page') }}">Elements</a></li>
-            <li><a href="{{ url_for('diagnosis') }}">Piano Diagnosis</a></li>
-
+          <li><a href="/">HOME</a></li>
+          <li><a href="{{ url_for('history_page') }}">History</a></li>
+          <li><a href="{{ url_for('elements_page') }}">Elements</a></li>
+          <li><a href="{{ url_for('diagnosis') }}">Piano Diagnosis</a></li>
         </ul>
-    </nav>
-</div>
-</header>
+      </nav>
+    </div>
+  </header>
 
- <div class="container">
-  <h1>Piano Diagnosis</h1>
+</body>
+</html>
 
-  <div id="question-container"></div>
-  <div id="result-container" style="display:none;"></div>
- </div>
+  
 <script >
 
   const questions = [
