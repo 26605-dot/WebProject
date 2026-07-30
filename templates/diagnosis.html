@@ -1,5 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"> 
+  
+<body>
+  <header class="header">
+    <div class="custom-nav-wrapper">
+      <nav class="nav-menu">
+        <ul>
+          <li><a href="/">HOME</a></li>
+          <li><a href="{{ url_for('history_page') }}">History</a></li>
+          <li><a href="{{ url_for('elements_page') }}">Elements</a></li>
+          <li><a href="{{ url_for('diagnosis') }}">Piano Diagnosis</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Piano Diagnosis</h1>
+    <div id="question-container"></div>
+    <div id="result-container" style="display:none;"></div>
+ 
+  </main>
+
+</body>
+
 <head>
   <meta charset="UTF-8">
   <title>Piano Diagnosis</title>
@@ -9,15 +33,7 @@
       box-sizing: border-box;
     }
 
-    body {
-      margin: 0 !important;
-      padding: 0 !important;
-      font-family: "Helvetica Neue", Arial, sans-serif !important;
-      background: linear-gradient(135deg, #cce7ff, #a8d8ff) !important;
-      min-height: 100vh !important;
-    }
-
-    /* Header styling to stick to the top */
+          /* Header styling to stick to the top */
     .header {
       top: 0;
       right: 0 !important;
@@ -33,7 +49,19 @@
     align-items: center;
     width: 100%;      /* full width */
     padding: 10px 20px;
-}
+    }
+
+  
+
+    body {
+      margin: 0 !important;
+      padding: 0 !important;
+      font-family: "Helvetica Neue", Arial, sans-serif !important;
+      background: linear-gradient(135deg, #cce7ff, #a8d8ff) !important;
+      min-height: 100vh !important;
+    }
+
+ 
 
 
     .nav-menu ul {
@@ -69,30 +97,7 @@
   </style>
 </head>
 
-<body>
-  
 
-  <main class="container">
-    <h1>Piano Diagnosis</h1>
-    <div id="question-container"></div>
-    <div id="result-container" style="display:none;"></div>
- 
-  </main>
-
-  <header class="header">
-    <div class="custom-nav-wrapper">
-      <nav class="nav-menu">
-        <ul>
-          <li><a href="/">HOME</a></li>
-          <li><a href="{{ url_for('history_page') }}">History</a></li>
-          <li><a href="{{ url_for('elements_page') }}">Elements</a></li>
-          <li><a href="{{ url_for('diagnosis') }}">Piano Diagnosis</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-</body>
 </html>
 
   
