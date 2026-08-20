@@ -1,13 +1,6 @@
 {% extends "layout.html" %}
 {% block body %}
 
-
-<div class="custom-hero-wrapper">
-    <div class="hero-image">
-        <h1 class="hero-text"></h1>
-    </div>
-</div>
-
 <style>
   body {
     padding-top: 27px !important;
@@ -24,6 +17,10 @@
 </head>
 <body>
 <header class="header">
+  <a href="#" class="logo-link">
+    <img src="{{ url_for('static', filename='images/your-logo.png') }}" alt="Logo" class="header-logo">
+  </a>
+  <div class="custom-nav-wrapper">
     <nav class="nav-menu">
         <ul>
             <li><a href="/">HOME</a></li>
@@ -33,10 +30,12 @@
 
         </ul>
     </nav>
+  </div>
 </header>
 </body>
 
 </html>
+<div class="hero-image"></div>
 
 <div class="elements-container">
   <h1>Elements</h1>
